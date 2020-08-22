@@ -5,21 +5,23 @@
     <!-- 主体内容 -->
     <div class="d2-layout-header-aside-content" flex="dir:top">
       <!-- 顶栏 -->
-      <div class="d2-theme-header" :style="{ opacity: this.searchActive ? 0.5 : 1 }" flex-box="0" flex>
+      <div class="d2-theme-header" style="background-color:white;" :style="{ opacity: this.searchActive ? 0.5 : 1 }" flex-box="0" flex>
         <router-link
           to="/index"
           :class="{'logo-group': true, 'logo-transition': asideTransition}"
-          :style="{width: asideCollapse ? asideWidthCollapse : asideWidth, 'font-size':asideCollapse?'16px':'30px'}"
-          style="height: 65px;color: #334455;font-size: 30px;line-height: 65px;text-align: center;transition: all 0.3s;border: 1px solid #eeeeee;"
+          :style="{width: asideCollapse ? asideWidthCollapse : asideWidth, 'font-size':asideCollapse?'12px':'30px'}"
+          style="background-color: rgb(235, 241, 246);height: 60px;color: #334455;font-size: 30px;line-height: 60px;text-align: center;transition: all 0.3s;    border-bottom: 1px solid rgb(207, 215, 229);
+    border-right: 1px solid rgb(207, 215, 229);"
           flex-box="0">
-          EzLinker
+          EZLINKER
           <!-- <img v-if="asideCollapse" :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.png`">
           <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/all.png`"> -->
         </router-link>
         <div class="toggle-aside-btn" @click="handleToggleAside" flex-box="0">
           <d2-icon name="bars"/>
         </div>
-        <d2-menu-header flex-box="1"/>
+        <div style="width:100%"></div>
+        <!-- <d2-menu-header flex-box="1"/> -->
         <!-- 顶栏右侧 -->
         <div class="d2-header-right" flex-box="0">
           <!-- 如果你只想在开发环境显示这个按钮请添加 v-if="$env === 'development'" -->
@@ -58,9 +60,9 @@
           <transition name="fade-scale">
             <div v-if="!searchActive" class="d2-theme-container-main-layer" flex="dir:top">
               <!-- tab -->
-              <div class="d2-theme-container-main-header" flex-box="0">
+              <!-- <div class="d2-theme-container-main-header" flex-box="0">
                 <d2-tabs/>
-              </div>
+              </div> -->
               <!-- 页面 -->
               <div class="d2-theme-container-main-body" flex-box="1">
                 <transition :name="transitionActive ? 'fade-transverse' : ''">
@@ -155,6 +157,5 @@ export default {
 <style lang="scss">
 // 注册主题
 @import '~@/assets/style/theme/register.scss';
-
 
 </style>
